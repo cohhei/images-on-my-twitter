@@ -1,0 +1,12 @@
+<% if logged_in? %>
+  <h1>My Images</h1>
+  <p>
+    <a href='logout'>logout</a>
+  </p>
+  <% @photos.each do |photo| %>
+    <p><img src="<%= photo %>" alt="image" /></p>
+  <% end %>
+<% else %>
+  <h1>Images on my Twitter</h1>
+  <input type="button" name="login" value="Twitter Login" onClick="location.href='/auth/twitter'">
+<% end %>
